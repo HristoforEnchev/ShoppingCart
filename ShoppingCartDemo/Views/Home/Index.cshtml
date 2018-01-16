@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Product
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>
+                    @product.Title
+                </td>
+                <td>
+                    @product.Price
+                </td>
+                <td>
+                    <a asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-id="@product.Id" class="btn btn-default">Add To Cart</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

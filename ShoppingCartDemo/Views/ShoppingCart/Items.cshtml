@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ShoppingCartItemsViewModel>
+
+@{
+    ViewData["Title"] = "Items";
+}
+
+<h2>Items</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Quantity
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Price
+                </td>
+                <td>
+                    @item.Quantity
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<hr />
+<div>Total Price: @Model.Sum(m => m.Price * m.Quantity)</div>
+
+
+
+
