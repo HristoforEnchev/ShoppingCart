@@ -10,5 +10,7 @@
         void RemoveFromCart(string id, int productId);
 
         IEnumerable<CartItem> GetItems(string id);
+
+        void Clear(string id);
     }
 }

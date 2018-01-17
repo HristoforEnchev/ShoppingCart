@@ -43,5 +43,10 @@ namespace ShoppingCartDemo.Services.Models
             }
         }
 
+        public void Clear()
+        {
+            this.items.Clear();
+        }
+
     }
 }

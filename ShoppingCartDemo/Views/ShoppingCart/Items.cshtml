@@ -48,6 +48,8 @@
 <hr />
 <div>Total Price: @Model.Sum(m => m.Price * m.Quantity)</div>
 
+<a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="FinishOrder">Finish Order</a>
+
 
 
 

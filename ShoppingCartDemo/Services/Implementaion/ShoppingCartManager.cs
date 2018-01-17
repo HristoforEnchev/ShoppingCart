@@ -36,12 +36,17 @@ namespace ShoppingCartDemo.Services.Implementaion
             return shopingCart.Items.ToList();
         }
 
-        
+        public void Clear(string id)
+        {
+            this.GetShoppingCart(id).Clear();
+        }
 
 
         private ShoppingCart GetShoppingCart(string id)
         {
             return this.carts.GetOrAdd(id, new ShoppingCart());
         }
+
+        
     }
 }
